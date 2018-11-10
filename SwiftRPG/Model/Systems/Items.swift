@@ -12,14 +12,16 @@ import Foundation
 class Items {
     struct Weapon {
         var name: String
+        var DMG: Int
     }
     
     struct Trash {
         var name: String
+    
     }
     
 }
 
 
-let firstWeapon: Items.Weapon = Items.Weapon(name: "First Weapon")
+let firstWeapon: Items.Weapon = Items.Weapon(name: "First Weapon", DMG: 3)
 let trashItem: Items.Trash = Items.Trash(name: "Garbage")

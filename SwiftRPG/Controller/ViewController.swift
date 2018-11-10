@@ -10,13 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var characterOutput: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        //HERE WE OUTPUT ALREADY CALCULATED CHARACTER FOR EXAMPLE TO DISPLAY ON CHARACTER SCREEN
+        characterOutput.text =  "\(CharacterHandlers().calculateStats())"
         
-        let myCharacter = Character(HP: 100, DMG: 10, DEF: 3, currency: 1000, specialCurrency: 0, energy: 30, weapon: firstWeapon, inventory: [firstWeapon,trashItem])
-        print(myCharacter)
+        
+        
+
     }
 
 

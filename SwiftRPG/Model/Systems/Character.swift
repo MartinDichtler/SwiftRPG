@@ -9,6 +9,9 @@
 import Foundation
 
 
+//OUR DEFAULT CHARACTER WHICH CAN BE CHANGED AND ADJUSTED IF WE DECIDE TO ADD CLASSES IN FUTURE
+let myCharacter = Character(HP: 100, DMG: 10, DEF: 3, currency: 1000, specialCurrency: 0, energy: 30, weapon: firstWeapon, inventory: [firstWeapon,trashItem])
+
 struct Character {
     
     //CHARACTER STATS
@@ -42,6 +45,18 @@ struct Character {
 class CharacterHandlers {
     
     
+    //BEFORE DISPLAYING CHARACTER AND IT'S STATS WE WANT TO CALCULATE THE AMOUNT OF STATS WHICH IS ADDED BY OUR EQUIPMENT
+    func calculateStats() -> Character {
+        
+        //CREATE CHARACTER REFERENCE WHICH IS REFERENCING OUR CURRENT CHARACTER
+        var characterReference = myCharacter
+        
+        //CALCULATE DMG STAT WHICH IS OUR CHARACTERS BASE STAT + EQUIPMENT DMG STATS
+        characterReference.DMG = characterReference.DMG + myCharacter.weapon.DMG
+
+        return characterReference
+        
+    }
     
 
     
