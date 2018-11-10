@@ -10,7 +10,11 @@ import Foundation
 
 
 //OUR DEFAULT CHARACTER WHICH CAN BE CHANGED AND ADJUSTED IF WE DECIDE TO ADD CLASSES IN FUTURE
-let myCharacter = Character(HP: 100, DMG: 10, DEF: 3, currency: 1000, specialCurrency: 0, energy: 30, weapon: firstWeapon, inventory: [firstWeapon,trashItem])
+var myCharacter = Character(HP: 100, DMG: 10, DEF: 3, currency: 1000, specialCurrency: 0, energy: 30, weapon: defaultWeapon, inventory: [firstWeapon,trashItem])
+//DISPLAYED STATS
+var displayedStats = [String:Int]()
+var displayedStatsLabels = [String]()
+
 
 struct Character {
     
@@ -35,10 +39,10 @@ struct Character {
     //EQUIPMENT
     
     //WEAPON
-    var weapon: Items.Weapon
+    var weapon: Items.Item
     
     //RULE FOR INVENTORY IS THAT WE USE STRUCTS ONLY
-    var inventory: [Any]
+    var inventory: [Items.Item]
     
 }
 
@@ -58,6 +62,33 @@ class CharacterHandlers {
         
     }
     
+    func prepareStatsToBeDisplayed() -> [String: Int] {
+        
+        //CALCULATE STATS WHICH INCLUDE EQUIPMENT
+        let updatedCharacter = calculateStats()
+        
+        
+        
+        //AMOUNT OF STATS HERE HAS TO MATCH AMOUNT OF STATS IN OUR CONFIGURATION.SWIFT
+        //REUSE UPDATECHARACTER WHICH HAS THE MOST CURRENT STATS INCLUDING STATS FROM EQUIPMENT
+        let statsToBeDisplayed = [
+            "HP" :  updatedCharacter.HP,
+            "DMG":  updatedCharacter.DMG,
+            "DEF":  updatedCharacter.DEF
+            
+        ]
+        //ASSIGN LABELS FOR INDIVIDUAL STATS LETTING US TO RENAME THEM
+        displayedStatsLabels = [
+        "HP",
+        "DMG",
+        "DEF"
+        ]
+        
+        return statsToBeDisplayed
+        
+        
+    }
+    
 
     
     
@@ -69,3 +100,6 @@ class CharacterHandlers {
     
     
 }
+
+
+
