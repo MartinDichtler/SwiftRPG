@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     
     
@@ -24,6 +26,13 @@ class ViewController: UIViewController {
         
         
 
+    }
+    
+    
+    func reloadView() {
+        tableView.reloadData()
+        collectionView.reloadData()
+        
     }
 
 
@@ -54,6 +63,17 @@ extension ViewController:  UICollectionViewDelegate,UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //RESPONDING TO INPUT TO VARIUS ITEMS BY THEIR TYPE
+        let inventoryRef = myCharacter.inventory
+        print("Input in inventory field.")
+        if(inventoryRef[indexPath.row].type == .Weapon) {
+            print("Selected item is weapon")
+            CharacterHandlers().equipWeapon(item: inventoryRef[indexPath.row], index: indexPath.row)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.reloadView()
+                
+            }
+        }
     }
 }
 

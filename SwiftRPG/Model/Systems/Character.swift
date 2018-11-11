@@ -9,8 +9,9 @@
 import Foundation
 
 
+
 //OUR DEFAULT CHARACTER WHICH CAN BE CHANGED AND ADJUSTED IF WE DECIDE TO ADD CLASSES IN FUTURE
-var myCharacter = Character(HP: 100, DMG: 10, DEF: 3, currency: 1000, specialCurrency: 0, energy: 30, weapon: defaultWeapon, inventory: [firstWeapon,trashItem])
+var myCharacter = Character(HP: 100, DMG: 10, DEF: 3, power: 0, currency: 1000, specialCurrency: 0, energy: 30, weapon: defaultWeapon, inventory: [firstWeapon,trashItem])
 //DISPLAYED STATS
 var displayedStats = [String:Int]()
 var displayedStatsLabels = [String]()
@@ -22,6 +23,10 @@ struct Character {
     var HP: Int
     var DMG: Int
     var DEF: Int
+    
+    
+    //TOTAL POWER STAT
+    var power: Int
     
     //GAME STATS
     //**********
@@ -55,8 +60,16 @@ class CharacterHandlers {
         //CREATE CHARACTER REFERENCE WHICH IS REFERENCING OUR CURRENT CHARACTER
         var characterReference = myCharacter
         
-        //CALCULATE DMG STAT WHICH IS OUR CHARACTERS BASE STAT + EQUIPMENT DMG STATS
-        characterReference.DMG = characterReference.DMG + myCharacter.weapon.DMG
+        //ADD UP POWER FROM OUR EQUIPMENT
+        let totalPower = characterReference.weapon.power
+        
+        characterReference.power = totalPower
+        
+        characterReference.DMG = characterReference.DMG + Int((Double(totalPower) * Configuration().dmgMultiplier))
+        characterReference.HP = characterReference.HP + Int((Double(totalPower) *  Configuration().hpMultiplier))
+        characterReference.DEF = characterReference.DEF + Int((Double(totalPower) * Configuration().defMultiplier))
+        
+        
 
         return characterReference
         
@@ -74,19 +87,37 @@ class CharacterHandlers {
         let statsToBeDisplayed = [
             "HP" :  updatedCharacter.HP,
             "DMG":  updatedCharacter.DMG,
-            "DEF":  updatedCharacter.DEF
+            "DEF":  updatedCharacter.DEF,
+            "Power": updatedCharacter.power
             
         ]
         //ASSIGN LABELS FOR INDIVIDUAL STATS LETTING US TO RENAME THEM
         displayedStatsLabels = [
         "HP",
         "DMG",
-        "DEF"
+        "DEF",
+        "Power"
         ]
         
         return statsToBeDisplayed
         
         
+    }
+    
+    
+    func equipWeapon(item: Items.Item, index: Int) {
+        if(myCharacter.weapon.name != defaultWeapon.name) {
+            myCharacter.inventory.remove(at: index)
+            myCharacter.inventory.append(myCharacter.weapon)
+            myCharacter.weapon = item
+            print("Weapon was equipped and current weapon was unequipped.")
+            
+            
+        } else {
+            myCharacter.inventory.remove(at: index)
+            myCharacter.weapon = item
+            print("Weapon was equipped without placing default weapon to inventory")
+        }
     }
     
 

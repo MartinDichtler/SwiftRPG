@@ -20,5 +20,13 @@ class Configuration {
     let inventoryLimit = 6
     
     //AMOUNT OF DIFFERENT STATS THAT ARE DISPLAYED ON CHARACTER SCREEN
-    let amountOfStatsPerCharacter = 3
+    let amountOfStatsPerCharacter = 4
+    
+    
+    //POWER MULTIPLIERS
+    //ALL ITEMS HAVE POWER AS THEIR ONLY STATS, OTHER STATS ARE CALCULATED USING MULTIPLIES TO POWER VALUE
+    let dmgMultiplier = 1.5
+    let hpMultiplier = 2.5
+    let defMultiplier = 1.2
+    
 }

@@ -18,7 +18,7 @@ class Items {
     
     struct Item {
         var name: String
-        var DMG: Int
+        var power: Int
         var type: ItemType
     }
     
@@ -39,8 +39,8 @@ class Items {
 }
 
 //DEFAULT WEAPON WHICH IS THERE IF NOTHING ELSE IS EQUIPED
-let defaultWeapon = Items.Item(name: "Default", DMG: 0, type: .Weapon)
+let defaultWeapon = Items.Item(name: "Default", power: 1, type: .Weapon)
 
 //TESTING ITEMS
-let firstWeapon = Items.Item(name: "First Weapon", DMG: 3, type: .Weapon)
-let trashItem = Items.Item(name: "Trash Item", DMG: 0, type: .Trash)
+let firstWeapon = Items.Item(name: "First Weapon", power: 3, type: .Weapon)
+let trashItem = Items.Item(name: "Trash Item", power: 0, type: .Trash)

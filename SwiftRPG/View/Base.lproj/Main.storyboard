@@ -136,6 +136,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="bFa-8M-8JS" id="mRZ-IV-3OX"/>
+                        <outlet property="tableView" destination="SCD-rG-krh" id="lja-fH-FNA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
