@@ -21,13 +21,13 @@ class QuestController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        pickedQuest = Quests().AssignQuest()
+        pickedQuest = Quests().assignQuest()
     }
     
     @IBAction func questGiverTapped(_ sender: Any) {
         
         //IF FOR SOME REASON QUEST WASN'T ASSIGNED WITH THE LOAD WE WANT TO ASSIGN QUEST ANYWAYS TO AVOID CRASHES
-        displayQuest(currentQuest: pickedQuest ?? Quests().AssignQuest())
+        displayQuest(currentQuest: pickedQuest ?? Quests().assignQuest())
     }
     
     func displayQuest(currentQuest: Quest) {

@@ -27,8 +27,8 @@ class Quests {
     var currentRewards = ["currencyReward": 0, "specialCurrencyReward": 0, "XPReward": 0, "ItemReward": noReward] as [String : Any]
     
     
-    func AssignQuest() -> Quest {
-        let assignedQuestIndex = RandomNumber(total: QuestsData().data.count)
+    func assignQuest() -> Quest {
+        let assignedQuestIndex = randomNumber(total: QuestsData().data.count)
         let assignedQuest = QuestsData().data[assignedQuestIndex]
         return assignedQuest
     }
@@ -36,7 +36,7 @@ class Quests {
     
     
     
-    func CompletedQuest(quest: Quest) {
+    func completeQuest(quest: Quest) {
         //MAKE SURE THAT OUR REWARD COUNTER IS RESET
         currentRewards = ["currencyReward": 0, "specialCurrencyReward": 0, "XPReward": 0, "ItemReward": noReward]
         
@@ -48,7 +48,7 @@ class Quests {
         }
         
         //RECALCULATE STATS INCLUDING EQUIPMENT AND CREATE REWARD BASED ON THAT
-        let baseReward = CalculateReward(power: CharacterHandlers().calculateStats().power)
+        let baseReward = calculateRewards(power: CharacterHandlers().calculateStats().power)
         
         print(baseReward)
             //ADD BASE CURRENCY
@@ -68,14 +68,14 @@ class Quests {
     
     
     //EDIT THIS FUNCTION TO CHANGE REWARD SCHEME FOR XP
-    func CalculateReward(power: Int) -> Int {
+    func calculateRewards(power: Int) -> Int {
         let baseReward = power * Configuration().questRewardMultiplier
         return baseReward
     }
     
     
     //HELPER REUSE FUNCTION TO GET RANDOM NUMBER
-    func RandomNumber(total: Int) -> Int {
+    func randomNumber(total: Int) -> Int {
         return Int.random(in: 0 ... total - 1)
     }
     

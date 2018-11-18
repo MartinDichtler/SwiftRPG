@@ -17,7 +17,7 @@ class QuestProgressController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //ONCE AGAIN IN CASE OF SOME ERRORS WE WANT TO HANDLE IT BY REASSIGNING DIFFERENT QUEST THIS IS LIKELY TO BE CHANGED IN FUTURE
-        questStarted(quest: acceptedQuest ?? Quests().AssignQuest())
+        questStarted(quest: acceptedQuest ?? Quests().assignQuest())
         
     }
     
@@ -27,7 +27,7 @@ class QuestProgressController: UIViewController {
         //BECAUSE DISPATCH QUEUE REQUIRES DOUBLE WILL CAST OUR DURATION TO DOUBLE
         let durationOfTimerInSeconds = Double(quest.DurationInSeconds)
         DispatchQueue.main.asyncAfter(deadline: .now() + durationOfTimerInSeconds) {
-            Quests().CompletedQuest(quest: quest)
+            Quests().completeQuest(quest: quest)
             print("Quest has been completed.")
         }
     }
