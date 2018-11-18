@@ -11,7 +11,7 @@ import Foundation
 
 
 //OUR DEFAULT CHARACTER WHICH CAN BE CHANGED AND ADJUSTED IF WE DECIDE TO ADD CLASSES IN FUTURE
-var myCharacter = Character(HP: 100, DMG: 10, DEF: 3, power: 0, currency: 1000, specialCurrency: 0, energy: 30, weapon: defaultWeapon, inventory: [firstWeapon,trashItem])
+var myCharacter = Character(HP: 100, DMG: 10, DEF: 3, power: 0, currency: 1000, specialCurrency: 0, energy: 30, weapon: defaultWeapon, inventory: [firstWeapon,trashItem,testWeaponHighPower])
 //DISPLAYED STATS
 var displayedStats = [String:Int]()
 var displayedStatsLabels = [String]()
@@ -118,6 +118,31 @@ class CharacterHandlers {
             myCharacter.weapon = item
             print("Weapon was equipped without placing default weapon to inventory")
         }
+    }
+    
+    
+    func rewardCurrency(baseReward: Int, rewardPercentage: Int) {
+        print("Base Reward: \(baseReward) RewardPercentage: \(rewardPercentage)")
+        let rewardMultiplier = Float(rewardPercentage) / 100.0
+        let currencyToGive: Float = Float(baseReward) * rewardMultiplier
+        myCharacter.currency = myCharacter.currency + Int(currencyToGive)
+        print("Added \(currencyToGive) to users currency balance")
+        Quests().currentRewards["currencyReward"] = currencyToGive
+    }
+    
+    
+    func rewardSpecialCurrency(baseReward: Int, specialRewardPercentage: Int) {
+        let rewardMultiplier = Float(specialRewardPercentage) / 100.0
+        let specialCurrencyToGive: Float = Float(baseReward) * rewardMultiplier
+        myCharacter.specialCurrency = myCharacter.specialCurrency + Int(specialCurrencyToGive)
+        print("Added \(specialCurrencyToGive) to users special currency balance")
+        Quests().currentRewards["specialCurrencyReward"] = specialCurrencyToGive
+        
+    }
+    
+    func rewardExperience(baseReward: Int, xpRewardPercentage: Int) {
+        //TODO
+         Quests().currentRewards["XPReward"] = 0
     }
     
 

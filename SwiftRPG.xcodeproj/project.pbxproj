@@ -17,6 +17,10 @@
 		92508D2B21974D0600FD1D1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92508D2921974D0600FD1D1B /* LaunchScreen.storyboard */; };
 		92508D372197502B00FD1D1B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92508D362197502B00FD1D1B /* Character.swift */; };
 		92508D392197511E00FD1D1B /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92508D382197511E00FD1D1B /* Items.swift */; };
+		92C4AE9921A0D47A00645E63 /* Quests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C4AE9821A0D47A00645E63 /* Quests.storyboard */; };
+		92C4AE9B21A0D4A700645E63 /* QuestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4AE9A21A0D4A700645E63 /* QuestController.swift */; };
+		92C4AE9D21A0D64E00645E63 /* Quests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4AE9C21A0D64E00645E63 /* Quests.swift */; };
+		92C4AE9F21A0DF3D00645E63 /* QuestProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4AE9E21A0DF3D00645E63 /* QuestProgressController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		92508D2C21974D0600FD1D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92508D362197502B00FD1D1B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		92508D382197511E00FD1D1B /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		92C4AE9821A0D47A00645E63 /* Quests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quests.storyboard; sourceTree = "<group>"; };
+		92C4AE9A21A0D4A700645E63 /* QuestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestController.swift; sourceTree = "<group>"; };
+		92C4AE9C21A0D64E00645E63 /* Quests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quests.swift; sourceTree = "<group>"; };
+		92C4AE9E21A0DF3D00645E63 /* QuestProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestProgressController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,7 @@
 			children = (
 				92508D2921974D0600FD1D1B /* LaunchScreen.storyboard */,
 				92508D2421974D0500FD1D1B /* Main.storyboard */,
+				92C4AE9821A0D47A00645E63 /* Quests.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -95,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				92508D2221974D0500FD1D1B /* ViewController.swift */,
+				92C4AE9A21A0D4A700645E63 /* QuestController.swift */,
+				92C4AE9E21A0DF3D00645E63 /* QuestProgressController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -115,6 +126,7 @@
 			children = (
 				92508D362197502B00FD1D1B /* Character.swift */,
 				92508D382197511E00FD1D1B /* Items.swift */,
+				92C4AE9C21A0D64E00645E63 /* Quests.swift */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -178,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92508D2B21974D0600FD1D1B /* LaunchScreen.storyboard in Resources */,
+				92C4AE9921A0D47A00645E63 /* Quests.storyboard in Resources */,
 				92508D2821974D0600FD1D1B /* Assets.xcassets in Resources */,
 				92508D2621974D0500FD1D1B /* Main.storyboard in Resources */,
 			);
@@ -193,9 +206,12 @@
 				92508D392197511E00FD1D1B /* Items.swift in Sources */,
 				9230C8F321976F1600741ABA /* Configuration.swift in Sources */,
 				9230C8F5219770A500741ABA /* InventoryCell.swift in Sources */,
+				92C4AE9D21A0D64E00645E63 /* Quests.swift in Sources */,
 				92508D372197502B00FD1D1B /* Character.swift in Sources */,
+				92C4AE9F21A0DF3D00645E63 /* QuestProgressController.swift in Sources */,
 				92508D2321974D0500FD1D1B /* ViewController.swift in Sources */,
 				92508D2121974D0500FD1D1B /* AppDelegate.swift in Sources */,
+				92C4AE9B21A0D4A700645E63 /* QuestController.swift in Sources */,
 				9230C8F72197743400741ABA /* StatCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
