@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Quest Controller-->
+        <!--Quests-->
         <scene sceneID="aov-Ft-990">
             <objects>
                 <viewController id="5lD-vx-cXd" customClass="QuestController" customModule="SwiftRPG" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBf-VX-Ov8" userLabel="QuestGiverView">
-                                <rect key="frame" x="392" y="249" width="240" height="426"/>
+                                <rect key="frame" x="392" y="199" width="240" height="426"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lIU-G5-NjU" userLabel="QuestGiverImage">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="426"/>
@@ -47,7 +47,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGI-Qz-FkR">
-                                <rect key="frame" x="40" y="446" width="944" height="232"/>
+                                <rect key="frame" x="40" y="396" width="944" height="232"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BS-fN-ylq">
                                         <rect key="frame" x="8" y="8" width="928" height="21"/>
@@ -94,6 +94,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gf4-cz-zbE"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Quests" id="Pkf-Cw-gpi"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="questDescriptionLabel" destination="jEe-CP-ea9" id="iX5-HM-pqi"/>
                         <outlet property="questGiverClickableArea" destination="37K-YD-CZo" id="Tpo-hT-Bh9"/>
