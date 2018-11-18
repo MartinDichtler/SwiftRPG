@@ -30,12 +30,14 @@ class Configuration {
     let defMultiplier = 1.2
     
     
-    //quest reward multiplier default 100
+    //QUEST REWARD MUTLIPLIER DEFAULT 100
     let questRewardMultiplier = 100
 }
 
 
 class QuestsData {
+    
+    //DATA ARE LIST OF QUESTS THAT ARE RANDOMLY PULLED REWARDPERCENTAGE IS USED AS MULTIPLIER: example; 100 = x1 200 = x2 5 = x0.05
     var data: [Quest] = [
         Quest(title: "First quest", description: "This is example text for quest", XPRewardPercentage: 90, CurrencyRewardPercentage: 100, SpecialCurrencyRewardPercentage: 5, Item: noReward, DurationInSeconds: 10),
         Quest(title: "Second quest", description: "This is example text for quest", XPRewardPercentage: 90, CurrencyRewardPercentage: 5, SpecialCurrencyRewardPercentage: 5, Item: noReward, DurationInSeconds: 10),

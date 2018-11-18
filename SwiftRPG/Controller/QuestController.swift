@@ -36,10 +36,13 @@ class QuestController: UIViewController {
         questDescriptionLabel.text = currentQuest.description
     }
     
-    @IBAction func acceptQuest(_ sender: Any) {
+    @IBAction func acceptQuestTapped(_ sender: Any) {
         acceptedQuest = pickedQuest
         questView.isHidden = true
         performSegue(withIdentifier: "questAccepted", sender: self)
+    }
+    @IBAction func declinedQuest(_ sender: Any) {
+        questView.isHidden = true
     }
     
 }

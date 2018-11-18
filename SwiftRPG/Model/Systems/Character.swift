@@ -104,7 +104,7 @@ class CharacterHandlers {
         
     }
     
-    
+    //HANDLES EQUIPING WEAPON AND UNEQUIPING CURRENT ITEM
     func equipWeapon(item: Items.Item, index: Int) {
         if(myCharacter.weapon.name != defaultWeapon.name) {
             myCharacter.inventory.remove(at: index)
@@ -120,7 +120,7 @@ class CharacterHandlers {
         }
     }
     
-    
+    //HANDLING REWARDING BASE CURRENCY
     func rewardCurrency(baseReward: Int, rewardPercentage: Int) {
         print("Base Reward: \(baseReward) RewardPercentage: \(rewardPercentage)")
         let rewardMultiplier = Float(rewardPercentage) / 100.0
@@ -130,7 +130,7 @@ class CharacterHandlers {
         Quests().currentRewards["currencyReward"] = currencyToGive
     }
     
-    
+    //HANDLING REWARDING SPECIAL CURRENCY
     func rewardSpecialCurrency(baseReward: Int, specialRewardPercentage: Int) {
         let rewardMultiplier = Float(specialRewardPercentage) / 100.0
         let specialCurrencyToGive: Float = Float(baseReward) * rewardMultiplier
@@ -140,6 +140,7 @@ class CharacterHandlers {
         
     }
     
+    //HANDLING REWARDING EXPERIENCE
     func rewardExperience(baseReward: Int, xpRewardPercentage: Int) {
         //TODO
          Quests().currentRewards["XPReward"] = 0

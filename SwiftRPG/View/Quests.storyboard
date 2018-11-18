@@ -65,13 +65,22 @@
                                         <rect key="frame" x="842" y="194" width="94" height="30"/>
                                         <state key="normal" title="Accept Quest"/>
                                         <connections>
-                                            <action selector="acceptQuest:" destination="5lD-vx-cXd" eventType="touchUpInside" id="Pn5-SI-gyX"/>
+                                            <action selector="acceptQuestTapped:" destination="5lD-vx-cXd" eventType="touchUpInside" id="Pn5-SI-gyX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8s-Px-RJM">
+                                        <rect key="frame" x="738" y="194" width="96" height="30"/>
+                                        <state key="normal" title="Decline Quest"/>
+                                        <connections>
+                                            <action selector="declinedQuest:" destination="5lD-vx-cXd" eventType="touchUpInside" id="Z49-H5-Osm"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="sII-nk-4ZB" firstAttribute="leading" secondItem="Q8s-Px-RJM" secondAttribute="trailing" constant="8" id="9Hg-RL-k4c"/>
                                     <constraint firstAttribute="trailing" secondItem="jEe-CP-ea9" secondAttribute="trailing" constant="20" id="ATY-Q9-jKi"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q8s-Px-RJM" secondAttribute="bottom" constant="8" id="E8m-Hp-2eF"/>
                                     <constraint firstAttribute="bottom" secondItem="jEe-CP-ea9" secondAttribute="bottom" constant="45" id="MHi-Wk-Lq1"/>
                                     <constraint firstAttribute="height" constant="232" id="NqF-lE-XI3"/>
                                     <constraint firstAttribute="bottom" secondItem="sII-nk-4ZB" secondAttribute="bottom" constant="8" id="OZJ-f3-pj6"/>

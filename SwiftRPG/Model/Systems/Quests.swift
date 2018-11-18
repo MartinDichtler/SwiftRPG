@@ -24,9 +24,12 @@ struct Quest {
 
 class Quests {
     
+    //WE USE CURRENT REWARDS TO DISPLAY REWARD AFTER QUEST IS FINISHED
     var currentRewards = ["currencyReward": 0, "specialCurrencyReward": 0, "XPReward": 0, "ItemReward": noReward] as [String : Any]
     
     
+    
+    //ASSIGN QUEST IS CALLED TO DETERMINE WHICH WILL BE THE NEXT QUEST WHEN USER TRIES TO ACCEPT IT
     func assignQuest() -> Quest {
         let assignedQuestIndex = randomNumber(total: QuestsData().data.count)
         let assignedQuest = QuestsData().data[assignedQuestIndex]
@@ -35,7 +38,7 @@ class Quests {
     
     
     
-    
+    //CONDITIONS AND CALCULATIONS FOR COMPLETING QUEST
     func completeQuest(quest: Quest) {
         //MAKE SURE THAT OUR REWARD COUNTER IS RESET
         currentRewards = ["currencyReward": 0, "specialCurrencyReward": 0, "XPReward": 0, "ItemReward": noReward]

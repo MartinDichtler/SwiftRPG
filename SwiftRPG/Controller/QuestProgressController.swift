@@ -29,6 +29,7 @@ class QuestProgressController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + durationOfTimerInSeconds) {
             Quests().completeQuest(quest: quest)
             print("Quest has been completed.")
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
